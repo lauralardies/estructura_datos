@@ -4,7 +4,7 @@ Nuestra dirección de GitHub para este repositorio es la siguiente: [GitHub](htt
 https://github.com/lauralardies/estructura_datos
 
 Para esta tarea había tres ejercicios distintos:
-## Ejercicio 1:
+## Ejercicio 1
 Este ejercicio consiste en crear una clase que recorra una serie de clases. El objetivo de esta nueva clase (llamada visitante) es que sea capaz de imprimir este mismo mensaje:
 ```
 while True: 
@@ -39,6 +39,43 @@ En el código principal llamamos sólo a la última función, pues esta ejecuta 
 visitante = Visitante(bucle)
 visitante.print_codigo()
 ```
-## Ejercicio 2:
+## Ejercicio 2
+El ejercicio 2 trata de pedirle al usuario dos líneas de texto. Seguidamente, el código cambia estas dos líneas de texto a mayúsculas y las introduce en un archivo txt, cuyo nombre es elegido por el usuario. La importancia de este ejercicio es centrarse en realizar un código siguiendo la filosofía MVC. Para ello, he creado tres clases: 
+- Clase 1.
+```
+class DatosUsuario:
 
-## Ejercicio 3:
+    def __init__(self, linea1, linea2) -> None:
+        self.l1 = linea1
+        self.l2 = linea2
+```
+- Clase 2.
+```
+class Mayusculas():
+
+    def __init__(self, datos) -> None:
+        self.datos_procesados = DatosUsuario
+        self.datos_procesados.l1 = datos.l1.upper()
+        self.datos_procesados.l2 = datos.l2.upper()
+```
+- Clase 3.
+```
+class Guardar():
+
+    def __init__(self, nombre_archivo, nuevos_datos) -> None:
+        self.texto_archivo = nuevos_datos
+        self.nombre_archivo = nombre_archivo
+        f = open(self.nombre_archivo + ".txt", "w", encoding="utf8")
+        f.write(self.texto_archivo.l1 + "\n" + self.texto_archivo.l2)
+        f.close
+```
+El código principal que ejecuta las clases que acabamos de nombrar es el siguiente:
+```
+linea1 = input("Por favor, introduzca la primera linea de su archivo: ")
+linea2 = input("Por favor, introduzca la segunda linea de su archivo: ")
+nombre_archivo = input("¿Cómo quiere llamar al archivo donde se va a guardar se texto?: ")
+datos = DatosUsuario(linea1, linea2)
+nuevos_datos = Mayusculas(datos).datos_procesados
+Guardar(nombre_archivo, nuevos_datos)
+```
+## Ejercicio 3
