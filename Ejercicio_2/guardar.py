@@ -1,4 +1,3 @@
-
 class Guardar():
 
     def __init__(self, nombre_archivo, nuevos_datos) -> None:
