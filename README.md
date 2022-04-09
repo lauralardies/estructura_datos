@@ -79,3 +79,47 @@ nuevos_datos = Mayusculas(datos).datos_procesados
 Guardar(nombre_archivo, nuevos_datos)
 ```
 ## Ejercicio 3
+El último ejercicio te pide que creer un algoritmo capaz de reconocer qué IVA hay que aplicar dependiendo del producto que quieras comprar. El precio del producto siempre es 100, y el precio final depende del IVA aplicado. El enunciado nos pide un código que se comporte de la siguiente manera:
+```
+producto = Producto(Naturaleza.ALIMENTARIA) # IVA 5,5% 
+precio_neto = FactoryFactura.crear(producto).facturar() 
+print(precio_neto) 
+# 105.5 
+ 
+producto = Producto(Naturaleza.SERVICIO) # IVA 20% 
+precio_neto = FactoryFactura.crear(producto).facturar() 
+print(precio_neto) 
+# 120 
+```
+He desarrollado un código de tres clases que permite que fucione como marcado anteriormente:
+- Clase 1.
+```
+class Naturaleza():
+    ALIMENTARIA = 5.5
+    SERVICIO = 20
+```
+- Clase 2.
+```
+class Producto(Naturaleza):
+    
+    def __init__(self, iva) -> None:
+        super().__init__()
+        self.iva = iva
+        self.producto = 100
+```
+- Clase 3.
+```
+class FactoryFactura():
+    producto = None
+
+    @classmethod
+    def crear(cls, producto):
+        cls.producto = producto
+
+        return cls
+    
+    @classmethod
+    def facturar(cls):
+        return cls.producto.producto + (cls.producto.producto * cls.producto.iva / 100)
+```
+Este código sólo funciona si le aplicas IVA alimentaria o de servicio, puesto que son los únicos datos de IVA que recibe. Para que pueda calculas más tipos de IVA, sólo hay que añadir su nombre y valor a la clase Naturaleza (Clase 1).
