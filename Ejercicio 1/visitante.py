@@ -35,7 +35,13 @@ class Visitante:
         for i in range(0, len(self.bucle.bloque.instrucciones)):
             if isinstance(self.bucle.bloque.instrucciones[i], Si):
                 print("\tif " + str(self.bucle.bloque.instrucciones[i].condicion) + ":")
+                print("\t\tprint(" + str(self.bucle.bloque.instrucciones[i].entonces.mensaje) + ")")
+                print("\telse:")
+                print("\t\tprint(" + str(self.bucle.bloque.instrucciones[i].si_no.mensaje) + ")")
         
+    def print_codigo(self):
+        self.print_while()
+        self.print_bloque()
 
 mostrar_ok = Mostrar('"OK"') 
 mostrar_ko = Mostrar('"KO"') 
@@ -45,5 +51,4 @@ bloque_alternativa.agregarInstruction(alternativa)
 bucle = MientrasQue(True, bloque_alternativa) 
 
 visitante = Visitante(bucle)
-visitante.print_while()
-visitante.print_bloque()
+visitante.print_codigo()
