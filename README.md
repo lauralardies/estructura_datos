@@ -1,6 +1,6 @@
 # estructura_datos
 
-Nuestra dirección de GitHub para este repositorio es la siguiente: [GitHub](https://github.com/lauralardies/estructura_datos)
+Mi dirección de GitHub para este repositorio es la siguiente: [GitHub](https://github.com/lauralardies/estructura_datos)
 https://github.com/lauralardies/estructura_datos
 
 Para esta tarea había tres ejercicios distintos:
@@ -40,7 +40,7 @@ visitante = Visitante(bucle)
 visitante.print_codigo()
 ```
 ## Ejercicio 2
-El ejercicio 2 trata de pedirle al usuario dos líneas de texto. Seguidamente, el código cambia estas dos líneas de texto a mayúsculas y las introduce en un archivo txt, cuyo nombre es elegido por el usuario. La importancia de este ejercicio es centrarse en realizar un código siguiendo la filosofía MVC. Para ello, he creado tres clases: 
+El ejercicio 2 trata de pedirle al usuario dos líneas de texto. Seguidamente, el código cambia estas dos líneas de texto a mayúsculas y las introduce en un archivo .txt, cuyo nombre es elegido por el usuario. La importancia de este ejercicio es centrarse en realizar un código siguiendo la filosofía MVC. Para ello, he creado tres clases: 
 - Clase 1.
 ```
 class DatosUsuario:
@@ -79,7 +79,7 @@ nuevos_datos = Mayusculas(datos).datos_procesados
 Guardar(nombre_archivo, nuevos_datos)
 ```
 ## Ejercicio 3
-El último ejercicio te pide que creer un algoritmo capaz de reconocer qué IVA hay que aplicar dependiendo del producto que quieras comprar. El precio del producto siempre es 100, y el precio final depende del IVA aplicado. El enunciado nos pide un código que se comporte de la siguiente manera:
+El último ejercicio te pide que crees un algoritmo capaz de reconocer qué IVA hay que aplicar dependiendo del producto que quieras comprar. El precio del producto siempre es 100, y el precio final depende del IVA aplicado. El enunciado nos pide un código que se comporte de la siguiente manera:
 ```
 producto = Producto(Naturaleza.ALIMENTARIA) # IVA 5,5% 
 precio_neto = FactoryFactura.crear(producto).facturar() 
@@ -91,7 +91,7 @@ precio_neto = FactoryFactura.crear(producto).facturar()
 print(precio_neto) 
 # 120 
 ```
-He desarrollado un código de tres clases que permite que fucione como marcado anteriormente:
+He desarrollado un código de tres clases que permite que fucione como indicado anteriormente:
 - Clase 1.
 ```
 class Naturaleza():
